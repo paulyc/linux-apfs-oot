@@ -11,5 +11,7 @@ apfs-y = btree.o dir.o extents.o file.o inode.o key.o message.o \
 
 default:
 	make -C /lib/modules/$(KERNELRELEASE)/build M=$(shell pwd)
+install:
+	make -C /lib/modules/$(KERNELRELEASE)/build M=$(shell pwd) modules_install
 clean:
 	make -C /lib/modules/$(KERNELRELEASE)/build M=$(shell pwd) clean
